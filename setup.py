@@ -11,7 +11,7 @@ setup(
     author            = 'Gary Buhrmaster',
     author_email      = 'gary.buhrmaster@gmail.com',
     py_modules        = ['libhdhomerun'],
-    url               = 'http://github.net/garybuhrmaster/python-libhdhomerun/tarball/???????',
+    url               = 'https://github.com/garybuhrmaster/python-libhdhomerun/tarball/master',
     license           = "Apache License 2.0",
     classifiers       = [
         'Development Status :: 4 - Beta',
