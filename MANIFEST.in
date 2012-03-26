@@ -1,0 +1,5 @@
+
+include LICENSE
+include README
+include CHANGES
+recursive-include examples *.py README

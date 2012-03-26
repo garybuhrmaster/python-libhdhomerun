@@ -1,0 +1,32 @@
+libhdhomerun
+
+libhdhomerun is a python module for accessing the SiliconDust(tm)
+shared library using python ctypes foreign function technology.
+
+This module does not (re)distribute the libhdhomerun shared
+library.  Obtaining and installing the shared library is a
+responsibility of the user:
+http://www.silicondust.com/support/hdhomerun/downloads/
+
+As of early 2012, this library does not expose the entire
+range of the SiliconDust shared library capabilities, nor
+even if it exposes the function, have all the functions
+been fully tested.  It primarly exports those functions
+in the device, discover, and channelscan library files
+(which the docs suggest are the recommended APIs).
+
+Testing has been done only on the HDHomeRun(tm) Prime in
+the US.  No testing of the basic or tech modules has occured.
+
+Development and testing of this module has been primarly
+performed on Linux.  Testing on Windows 7 was limited
+to verifing that this module loads, that it can load
+the libhdhomerun dll (as created in a VC 2010 package),
+and that a HDHomeRun Prime can be discovered.  Testing
+on MacOSX was limited to verifing that this module loads,
+that it can load the libhdhomerun dylib.
+
+
+
+SiliconDust and HDHomeRun are a registered trademarks
+of SiliconDust USA (http://www.silicondust.com/)
