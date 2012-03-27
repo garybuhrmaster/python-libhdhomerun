@@ -5,7 +5,7 @@ shared library using python ctypes foreign function technology.
 
 This module does not (re)distribute the libhdhomerun shared
 library.  Obtaining and installing the shared library is a
-responsibility of the user:
+responsibility of the user, and can be downloaded from:
 http://www.silicondust.com/support/hdhomerun/downloads/
 
 As of early 2012, this library does not expose the entire
@@ -24,7 +24,7 @@ to verifing that this module loads, that it can load
 the libhdhomerun dll (as created in a VC 2010 package),
 and that a HDHomeRun Prime can be discovered.  Testing
 on MacOSX was limited to verifing that this module loads,
-that it can load the libhdhomerun dylib.
+and that it can load the libhdhomerun dylib.
 
 
 
