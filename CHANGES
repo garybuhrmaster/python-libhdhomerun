@@ -3,8 +3,15 @@ Latest changes are at the top
 
 
 
+version 0.1.1        2012-08-01
+================================
 
-verson 0.1.0        2012-03-25
+* Correct hdhomerun_device_stream_recv argument definition
+* Add support for video packet recv (packet size defines)
+* Correct spelling of version in CHANGES for version 0.1.0
+
+version 0.1.0        2012-03-25
 ================================
 
 * Initial release
+

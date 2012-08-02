@@ -25,7 +25,7 @@ __author__      = "Gary Buhrmaster"
 __copyright__   = "Copyright 2012, Gary Buhrmaster"
 __credits__     = ["Gary Buhrmaster"]
 __license__     = "Apache License 2.0"
-__version__     = "0.1.0"
+__version__     = "0.1.1"
 __maintainer__  = "Gary Buhrmaster"
 __email__       = "gary.buhrmaster@gmail.com"
 __status__      = "Beta"
@@ -49,6 +49,10 @@ HDHOMERUN_DEVICE_ID_WILDCARD              = 0xFFFFFFFF
 HDHOMERUN_DEVICE_MAX_TUNE_TO_LOCK_TIME    = 1500
 HDHOMERUN_DEVICE_MAX_LOCK_TO_DATA_TIME    = 2000
 HDHOMERUN_DEVICE_MAX_TUNE_TO_DATA_TIME    = (HDHOMERUN_DEVICE_MAX_TUNE_TO_LOCK_TIME + HDHOMERUN_DEVICE_MAX_LOCK_TO_DATA_TIME)
+TS_PACKET_SIZE                            = 188
+VIDEO_DATA_PACKET_SIZE                    = (188 * 7)
+VIDEO_DATA_BUFFER_SIZE_1S                 = (20000000 / 8)
+VIDEO_RTP_DATA_PACKET_SIZE                = ((188 * 7) + 12)
 
 class hdhomerun_device_t(ctypes.Structure):
     pass
@@ -364,8 +368,8 @@ if hasattr(__libs['hdhomerun'], 'hdhomerun_device_stream_start'):
     hdhomerun_device_stream_start.restype = ctypes.c_int
 if hasattr(__libs['hdhomerun'], 'hdhomerun_device_stream_recv'):
     hdhomerun_device_stream_recv = __libs['hdhomerun'].hdhomerun_device_stream_recv
-    hdhomerun_device_stream_recv.argtypes = [ctypes.POINTER(hdhomerun_device_t)]
-    hdhomerun_device_stream_recv.restype = ctypes.c_uint8
+    hdhomerun_device_stream_recv.argtypes = [ctypes.POINTER(hdhomerun_device_t), ctypes.c_size_t, ctypes.POINTER(ctypes.c_size_t)]
+    hdhomerun_device_stream_recv.restype = ctypes.POINTER(ctypes.c_uint8)
 if hasattr(__libs['hdhomerun'], 'hdhomerun_device_stream_flush'):
     hdhomerun_device_stream_flush = __libs['hdhomerun'].hdhomerun_device_stream_flush
     hdhomerun_device_stream_flush.argtypes = [ctypes.POINTER(hdhomerun_device_t)]

@@ -5,7 +5,7 @@ from distutils.core import setup
 
 setup(
     name              = 'libhdhomerun',
-    version           = '0.1.0',
+    version           = '0.1.1',
     description       = 'Bindings to libhdhomerun',
     long_description  = 'Bindings to the libhdhomerun shared library',
     author            = 'Gary Buhrmaster',
