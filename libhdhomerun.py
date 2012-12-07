@@ -25,7 +25,7 @@ __author__      = "Gary Buhrmaster"
 __copyright__   = "Copyright 2012, Gary Buhrmaster"
 __credits__     = ["Gary Buhrmaster"]
 __license__     = "Apache License 2.0"
-__version__     = "0.1.1"
+__version__     = "0.1.2"
 __maintainer__  = "Gary Buhrmaster"
 __email__       = "gary.buhrmaster@gmail.com"
 __status__      = "Beta"
@@ -416,7 +416,7 @@ if hasattr(__libs['hdhomerun'], 'hdhomerun_discover_find_devices_custom'):
     hdhomerun_discover_find_devices_custom.restype = ctypes.c_int
 if hasattr(__libs['hdhomerun'], 'hdhomerun_discover_create'):
     hdhomerun_discover_create = __libs['hdhomerun'].hdhomerun_discover_create
-    hdhomerun_discover_create.argtypes = None
+    hdhomerun_discover_create.argtypes = [ctypes.POINTER(hdhomerun_debug_t)]
     hdhomerun_discover_create.restype = hdhomerun_discover_device_t
 if hasattr(__libs['hdhomerun'], 'hdhomerun_discover_destroy'):
     hdhomerun_discover_destroy = __libs['hdhomerun'].hdhomerun_discover_destroy
